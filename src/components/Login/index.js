@@ -17,7 +17,10 @@ class Login extends Component {
     const {history} = this.props
     const {username, password} = this.state
     const credentials = JSON.parse(localStorage.getItem('userData'))
-    if (username === credentials.name && password === credentials.password) {
+    const users = credentials.filter(
+      eachUser => eachUser.name === username && eachUser.password === password,
+    )
+    if (users.length > 0) {
       history.replace('/home')
     } else {
       this.setState({invalid: true})

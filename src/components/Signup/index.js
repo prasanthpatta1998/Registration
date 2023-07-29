@@ -8,6 +8,7 @@ class Signup extends Component {
     email: '',
     phoneNo: '',
     profession: '',
+    errorMsg: false,
   }
 
   onChangeName = event => this.setState({name: event.target.value})
@@ -31,20 +32,51 @@ class Signup extends Component {
       phoneNo,
       profession,
     }
-    const jsonData = JSON.stringify(data)
-    localStorage.setItem('userData', jsonData)
-    this.setState({
-      name: '',
-      password: '',
-      email: '',
-      phoneNo: '',
-      profession: '',
-    })
-    history.replace('/login')
+
+    const usersData = JSON.parse(localStorage.getItem('userData'))
+    if (usersData === null) {
+      const newData = [data]
+      const jsonData = JSON.stringify(newData)
+      localStorage.setItem('userData', jsonData)
+      this.setState({
+        name: '',
+        password: '',
+        email: '',
+        phoneNo: '',
+        profession: '',
+        errorMsg: false,
+      })
+      history.replace('/login')
+    } else {
+      const users = usersData.filter(
+        eachUser =>
+          eachUser.password === password ||
+          eachUser.email === email ||
+          eachUser.phoneNo === phoneNo,
+      )
+      console.log(users)
+      if (users.length > 0) {
+        this.setState({errorMsg: true})
+      } else {
+        console.log('Called')
+        const newData = [...usersData, data]
+        const jsonData = JSON.stringify(newData)
+        localStorage.setItem('userData', jsonData)
+        this.setState({
+          name: '',
+          password: '',
+          email: '',
+          phoneNo: '',
+          profession: '',
+          errorMsg: false,
+        })
+        history.replace('/login')
+      }
+    }
   }
 
   render() {
-    const {name, password, email, phoneNo, profession} = this.state
+    const {name, password, email, phoneNo, profession, errorMsg} = this.state
     return (
       <div className="registration-route">
         <div className="registration-container">
@@ -110,6 +142,7 @@ class Signup extends Component {
               </select>
             </div>
             <button type="submit">Sign Up</button>
+            {errorMsg && <p className="user-error-msg">User already signed </p>}
           </form>
         </div>
       </div>
