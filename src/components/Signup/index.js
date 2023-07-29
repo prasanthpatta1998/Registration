@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import './index.css'
 
-class Registration extends Component {
+class Signup extends Component {
   state = {
     name: '',
     password: '',
@@ -48,7 +48,7 @@ class Registration extends Component {
     return (
       <div className="registration-route">
         <div className="registration-container">
-          <h1 className="registration-heading">Registration Form</h1>
+          <h1 className="registration-heading">Sign Up Form</h1>
           <form onSubmit={this.onSubmitData}>
             <div>
               <label htmlFor="name">Name:</label>
@@ -109,7 +109,7 @@ class Registration extends Component {
                 <option value="doctor">Doctor</option>
               </select>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Sign Up</button>
           </form>
         </div>
       </div>
@@ -117,4 +117,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration
+export default Signup
