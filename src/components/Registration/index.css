@@ -1,5 +1,3 @@
-/* Styling for the registration form container */
-
 .registration-route {
   display: flex;
   justify-content: center;
@@ -8,19 +6,38 @@
 }
 
 .registration-container {
-  max-width: 400px;
+  width: 350px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f9f9f9;
 }
 
-.h1 {
+.registration-heading {
   text-align: center;
+  font-family: sans-serif;
+  font-size: 26px;
 }
 
-/* Styling for form fields */
+@media (min-width: 768px) {
+  .registration-container {
+    width: 400px;
+  }
+  .registration-heading {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .registration-container {
+    width: 430px;
+  }
+  .registration-heading {
+    font-size: 29px;
+  }
+}
+
 label {
   display: block;
   margin-bottom: 8px;
@@ -36,7 +53,6 @@ select {
   border-radius: 4px;
 }
 
-/* Styling for the submit button */
 button {
   width: 100%;
   padding: 10px;
@@ -45,6 +61,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 button:hover {

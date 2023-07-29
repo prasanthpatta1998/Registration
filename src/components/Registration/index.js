@@ -48,7 +48,7 @@ class Registration extends Component {
     return (
       <div className="registration-route">
         <div className="registration-container">
-          <h1>Registration Form</h1>
+          <h1 className="registration-heading">Registration Form</h1>
           <form onSubmit={this.onSubmitData}>
             <div>
               <label htmlFor="name">Name:</label>

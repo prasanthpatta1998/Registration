@@ -29,7 +29,7 @@ class Login extends Component {
     return (
       <div className="registration-route">
         <div className="registration-container">
-          <h1>Login Form</h1>
+          <h1 className="registration-heading">Login Form</h1>
           <form onSubmit={this.onSubmitData}>
             <div>
               <label htmlFor="username">Username:</label>
@@ -52,7 +52,7 @@ class Login extends Component {
                 required
               />
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Login</button>
             {invalid && <p>Invalid Credentials</p>}
           </form>
         </div>

@@ -1,0 +1,61 @@
+.nav-container {
+  height: 40px;
+  margin: 0px;
+  box-shadow: 0 3px 2px 0 rgb(203 203 203);
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-element {
+  font-family: fantasy;
+  font-size: 21px;
+}
+
+@media (min-width: 768px) {
+  .nav-element {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-element {
+    font-size: 26px;
+  }
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0px;
+}
+
+.movie-details-list {
+  flex-wrap: wrap;
+}
+
+.company-container {
+  padding-left: 15px;
+}
+
+.company-heading {
+  margin: 0px;
+  text-align: center;
+  font-family: 'Roboto';
+  text-decoration: underline;
+  color: #877951;
+}
+
+.company {
+  font-size: 15px;
+  color: #695e5e;
+  font-weight: bolder;
+}
+
+.company-name {
+  font-size: 15px;
+  color: #080808;
+  font-weight: 600;
+  margin-left: 5px;
+}
